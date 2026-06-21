@@ -18,10 +18,8 @@ const Dashboard = () => {
    const [sortBy, setSortBy] = useState("desc");
 
   
-  // eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(() => {
-  getDashboardData();
-}, [searchInput, sortBy]);
+  
 
    const getDashboardData = async () => {
       try {
@@ -49,7 +47,8 @@ useEffect(() => {
       }
       setIsLoading(false);
    };
-
+getDashboardData();
+}, [searchInput, sortBy]);
 
    if (isLoading) {
   return (

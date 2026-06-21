@@ -10,34 +10,38 @@ const ReferralDetails = () => {
   const [referral, setReferral] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  
- // eslint-disable-next-line react-hooks/exhaustive-deps
 useEffect(() => {
-  getReferralDetails();
-}, []);
- 
   const getReferralDetails = async () => {
-    const token = Cookies.get("jwt_token");
+    try {
+      const token = Cookies.get("jwt_token");
 
-    const response = await fetch(
-      `https://v9fes04dwf.execute-api.eu-north-1.amazonaws.com/api/referrals?id=${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+      const response = await fetch(
+        `https://v9fes04dwf.execute-api.eu-north-1.amazonaws.com/api/referrals?id=${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const data = await response.json();
+
+      if (
+        response.ok &&
+        data.data.referrals &&
+        data.data.referrals.length > 0
+      ) {
+        setReferral(data.data.referrals[0]);
       }
-    );
-
-
-    const data = await response.json();
-
-   if (response.ok) {
-  setReferral(data.data.referrals[0]);
-}
-
-    setIsLoading(false);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
+  getReferralDetails();
+}, [id]);
    if (isLoading) {
   return (
     <>
