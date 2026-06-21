@@ -25,6 +25,9 @@ useEffect(() => {
       );
 
       const data = await response.json();
+      console.log("Vercel Referral Response:", data);
+
+      console.log("Referral Details API:", data);
 
       if (
         response.ok &&
