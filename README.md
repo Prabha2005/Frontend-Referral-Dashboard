@@ -1,29 +1,54 @@
 # Referral Dashboard
 
-A React-based Referral Dashboard application that allows users to view referral metrics, search and sort referrals, navigate through paginated results, and view detailed information for individual referrals.
+A responsive React-based Referral Dashboard that enables users to track referral performance, search and sort referral records, view detailed referral information, and manage referral activity through a clean and intuitive interface.
+
+## Live Demo
+
+Live Application:
+https://frontend-referral-dashboard-ipt4d5nie.vercel.app
+
+GitHub Repository:
+https://github.com/Prabha2005/Frontend-Referral-Dashboard
+
+---
 
 ## Features
 
-* Secure login with JWT authentication
-* Protected routes
+* JWT-based authentication
+* Protected routes using React Router
 * Dashboard overview metrics
 * Service summary section
-* Referral link and code display
+* Referral link and referral code display
 * Search referrals by name or service
-* Sort referrals by date
+* Sort referrals by date (Newest / Oldest)
 * Client-side pagination (10 entries per page)
 * Referral details page
 * Custom 404 page
-* Responsive UI
+* Responsive design
+* Logout functionality
+
+---
 
 ## Tech Stack
+
+### Frontend
 
 * React.js
 * React Router DOM
 * JavaScript (ES6+)
 * CSS3
+
+### API & Authentication
+
 * Fetch API
+* JWT Authentication
 * js-cookie
+
+### Deployment
+
+* Vercel
+
+---
 
 ## Installation
 
@@ -51,11 +76,13 @@ Start the development server:
 npm start
 ```
 
-The application will run at:
+Application runs at:
 
 ```text
 http://localhost:3000
 ```
+
+---
 
 ## Build for Production
 
@@ -63,7 +90,9 @@ http://localhost:3000
 npm run build
 ```
 
-The production-ready files will be generated in the `build` folder.
+The optimized production files will be generated inside the `build` folder.
+
+---
 
 ## Project Structure
 
@@ -88,22 +117,39 @@ src
 └── index.js
 ```
 
-## Functionality
+---
 
-### Dashboard
-
-* Displays overview metrics
-* Shows service summary
-* Displays referral link and code
-* Supports search and sorting
-* Supports pagination
-
-### Referral Details
-
-* Displays detailed information about a selected referral
-* Accessible by clicking a referral row
+## Functionalities
 
 ### Authentication
 
-* Login-based access control
-* Protected routes using JWT token validation
+* Secure login
+* JWT token storage using cookies
+* Route protection using ProtectedRoute
+
+### Dashboard
+
+* Overview metrics
+* Service summary
+* Referral code and referral link
+* Search functionality
+* Sorting functionality
+* Pagination support
+
+### Referral Details
+
+* Dynamic routing using referral ID
+* Detailed referral information
+* Back to dashboard navigation
+
+### Error Handling
+
+* Custom 404 page
+* API error handling
+* Loading states
+
+---
+
+## Deployment
+
+The application is deployed on Vercel and automatically redeploys whenever new changes are pushed to the GitHub repository.
