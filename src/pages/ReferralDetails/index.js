@@ -11,10 +11,10 @@ const ReferralDetails = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   
-  useEffect(() => {
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+useEffect(() => {
   getReferralDetails();
 }, []);
-
  
   const getReferralDetails = async () => {
     const token = Cookies.get("jwt_token");
