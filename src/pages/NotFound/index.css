@@ -1,0 +1,36 @@
+.not-found-container {
+  min-height: 100vh;
+  background: #f7f8fc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.error-code {
+  margin: 0;
+  font-size: 64px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.error-message {
+  margin: 0;
+  font-size: 22px;
+  color: #475569;
+}
+
+.dashboard-link {
+  margin-top: 8px;
+  text-decoration: none;
+  color: #6366f1;
+  font-size: 18px;
+  font-weight: 600;
+  transition: opacity 0.2s ease;
+}
+
+.dashboard-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
