@@ -5,7 +5,7 @@ A responsive React-based Referral Dashboard that enables users to track referral
 ## Live Demo
 
 Live Application:
-[https://frontend-referral-dashboard-ipt4d5nie.vercel.app](https://frontend-referral-dashboard-blond.vercel.app/)
+https://frontend-referral-dashboard-blond.vercel.app/
 
 GitHub Repository:
 https://github.com/Prabha2005/Frontend-Referral-Dashboard
