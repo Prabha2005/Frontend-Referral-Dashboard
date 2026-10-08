@@ -1,136 +1,97 @@
-.table-section{
-    background: white; padding: 20px; border-radius: 12px; margin-top: 20px;
+.table-section {
+  background: #ffffff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  margin-top: 24px;
+  border: 1px solid #e5e7eb;
+  box-sizing: border-box;
 }
 
-.referrals-table{
-    width: 100%; border-collapse: collapse;
-}
-
-.referrals-table th, .referrals-table td{
-    padding: 14px; border-bottom: 1px solid #e5e7eb; text-align: left;
-}
-
-.referrals-table tr{
-    cursor: pointer;
-}
-
-.referrals-table tr:hover{
-    background: #f8fafc; 
-}
-
-.referrals-table tbody tr:hover {
-     background: #f8faff;
-}
-
-.pagination {
-  margin-top: 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
-.pagination button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-   width: 70px;
-  height: 48px;
-  padding: 0 16px;
-
-}
-
-.pagination button:disabled {
-  background: #f8fafc;
-  color: #94a3b8;
-  border: 1px solid #e2e8f0;
-  cursor: not-allowed;
-  opacity: 1;
-}
-
-.pagination-wrapper {
-  margin-top: 20px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.entries-text {
-  color: #64748b;
-  font-size: 14px;
-}
-
-.pagination {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.pagination button {
-   min-width: 40px;
-  height: 40px;
-
-  padding: 0 12px;
-
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-
-  background: white;
-  color: #334155;
-
-  cursor: pointer;
-}
-
-.active-page {
-  background: #6366f1 !important;
-  color: white !important;
-  border: none !important;
+.table-section h2 {
+  font-size: clamp(18px, 2.2vw, 20px);
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 20px 0;
 }
 
 .table-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 20px;
+  gap: 16px;
 }
 
 .search-container,
 .sort-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  min-width: 0;
 }
 
 .search-container label,
 .sort-container label {
   color: #64748b;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .search-container input {
-  width: 260px;
+  width: 240px;
+  max-width: 100%;
+  height: 42px;
   padding: 10px 14px;
-
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #ffffff;
+  color: #1e293b;
   outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-container input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 .sort-container select {
-  padding: 10px 14px;
-
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-
-  background: white;
+  height: 42px;
+  padding: 0 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #ffffff;
+  color: #1e293b;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.profit-cell {
-  color: #6366f1 !important;
-  font-weight: 600;
+.sort-container select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Horizontal scroll confined strictly to the table container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+}
+
+.referrals-table {
+  width: 100%;
+  min-width: 520px;
+  border-collapse: collapse;
+  text-align: left;
 }
 
 .referrals-table thead {
@@ -138,19 +99,162 @@
 }
 
 .referrals-table th {
+  padding: 14px 16px;
   color: #64748b;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
 }
 
 .referrals-table td {
-  color: #0f172a;
-  font-size: 15px;
+  padding: 16px;
+  color: #1e293b;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
 }
 
-
 .referrals-table tbody tr {
-  transition: background 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.referrals-table tbody tr:hover {
+  background-color: #f8faff;
+}
+
+.referrals-table tbody tr:active {
+  background-color: #eff2fe;
+}
+
+.name-cell {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.profit-cell {
+  color: #6366f1 !important;
+  font-weight: 600;
+}
+
+.empty-table-cell {
+  text-align: center;
+  color: #94a3b8;
+  padding: 36px 16px !important;
+  font-size: 14px;
+}
+
+.pagination-wrapper {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.entries-text {
+  color: #64748b;
+  font-size: 13px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.pagination {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pagination button {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all 0.15s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.pagination button:focus-visible {
+  outline: 2px solid #5850ec;
+  outline-offset: 2px;
+}
+
+.pagination button:disabled {
+  background: #f8fafc;
+  color: #cbd5e1;
+  border-color: #e2e8f0;
+  cursor: not-allowed;
+}
+
+.active-page {
+  background: #6366f1 !important;
+  color: #ffffff !important;
+  border-color: #6366f1 !important;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .table-section {
+    padding: 22px 18px;
+  }
+
+  .table-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .search-container,
+  .sort-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .search-container input,
+  .sort-container select {
+    width: 100%;
+  }
+
+  .pagination-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .table-section {
+    padding: 18px 14px;
+  }
+
+  .pagination button {
+    min-width: 34px;
+    height: 34px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
 }
