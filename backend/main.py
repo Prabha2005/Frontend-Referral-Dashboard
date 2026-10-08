@@ -132,7 +132,7 @@ def init_db():
             """)
 
             # Insert-only for referrals (preserves existing rows and edits)
-            from seed import ALL_INITIAL_REFERRALS, SAMPLE_PAYOUTS, generate_sample_financials
+            from backend.seed import ALL_INITIAL_REFERRALS, SAMPLE_PAYOUTS, generate_sample_financials
             conn.executemany("""
                 INSERT OR IGNORE INTO referrals (id, name, serviceName, date, profit, is_synthetic)
                 VALUES (?, ?, ?, ?, ?, ?)
