@@ -1,96 +1,180 @@
-.referral-details-container {
+.referral-details-wrapper {
   min-height: 100vh;
-  background: #f7f8fc;
-  padding: 40px 80px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f6fc;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.referral-details-page {
+  flex: 1;
+  width: 100%;
+  padding: 32px 32px 60px 32px;
+  box-sizing: border-box;
+}
+
+.referral-details-container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .back-link {
-  text-decoration: none;
-  color: #6366f1;
-  font-size: 15px;
-  font-weight: 500;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 24px;
+  color: #5850ec;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  opacity: 0.85;
+  transform: translateX(-2px);
 }
 
-.details-heading {
-  font-size: 42px;
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 8px;
+.back-link:focus-visible {
+  outline: 2px solid #5850ec;
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
-.details-description {
-  font-size: 18px;
+.referral-details-header h1 {
+  margin: 0 0 6px 0;
+  font-size: clamp(22px, 3.2vw, 28px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
+
+.referral-details-header p {
+  margin: 0 0 28px 0;
+  font-size: 14px;
   color: #64748b;
-  margin-bottom: 40px;
+  word-break: break-word;
 }
 
-.details-card {
+.referral-details-card {
   width: 100%;
-  max-width: 700px;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 40px;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+  max-width: 650px;
+  min-width: 0;
+  background-color: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  padding: 32px 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
 }
 
-.card-header {
+.card-top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 6px;
 }
 
-.card-header h2 {
-  font-size: 38px;
+.partner-name {
+  margin: 0;
+  font-size: clamp(19px, 2.5vw, 22px);
   font-weight: 700;
   color: #0f172a;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .service-badge {
-  background: #eef2ff;
-  color: #6366f1;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
+  background-color: #eff2fe;
+  color: #5850ec;
+  padding: 5px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.details-list {
+  margin: 0;
 }
 
 .details-row {
   display: flex;
-  padding: 18px 0;
-  border-top: 1px solid #e5e7eb;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #f8fafc;
 }
 
-.details-label {
+.details-row:last-child {
+  border-bottom: none;
+  padding-bottom: 6px;
+}
+
+.detail-label {
   width: 180px;
-  color: #64748b;
-  font-size: 13px;
+  flex-shrink: 0;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.details-value {
-  color: #0f172a;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.loading-card {
-  width: 100%;
-  max-width: 700px;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 120px 40px;
-  border: 1px solid #e5e7eb;
-  text-align: center;
   color: #64748b;
-  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.detail-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  flex: 1;
+}
+
+.referral-details-status,
+.referral-details-error,
+.referral-not-found {
+  padding: 24px 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .referral-details-page {
+    padding: 24px 20px 40px 20px;
+  }
+
+  .referral-details-card {
+    padding: 24px 20px;
+  }
+
+  .details-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .detail-label {
+    width: 100%;
+  }
+
+  .detail-value {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .referral-details-page {
+    padding: 18px 14px 32px 14px;
+  }
+
+  .referral-details-card {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
 }
