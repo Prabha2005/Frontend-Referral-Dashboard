@@ -22,11 +22,12 @@ Instead of displaying hardcoded constants or placeholder statistics, the backend
 - **Referral Details View**: Dedicated detail card displaying partner name, service badge, referral ID, date, and net commission.
 - **404 Not Found View**: Clean full-viewport fallback for unmatched routes or nonexistent referral IDs.
 
-### Endpoints & Target Platforms
-- **Frontend Server**: `http://localhost:3000` (Local Development)
-- **Backend API**: `http://127.0.0.1:8000` (Local REST Server)
-- **Interactive OpenAPI Docs**: `http://127.0.0.1:8000/docs`
-- **Target Deployment**: Configuration prepared for Vercel (frontend) and Render (backend); deployment pending reviewer publication.
+### Live Deployments & Endpoints
+- **Live Frontend**: https://frontend-referral-dashboard-three.vercel.app
+- **Live Backend API**: https://frontend-referral-dashboard.onrender.com
+- **Live Interactive Docs**: https://frontend-referral-dashboard.onrender.com/docs
+- **Deployment Status**: Live (Render Web Service + Vercel SPA)
+- **Local Development**: Frontend `http://localhost:3000` | Backend `http://127.0.0.1:8000`
 
 ---
 
@@ -407,7 +408,7 @@ python tests/test_dashboard.py
 - **Single Demo Account**: The application is tailored for a single authenticated affiliate account.
 - **Synthetic Data**: Financial inputs and payouts are generated demo records; no real banking integration exists.
 - **Referral Sharing**: The referral link and code widgets provide one-click clipboard copying for UI demonstration without an active tracking pixel or attribution pipeline.
-- **SQLite Persistence on Ephemeral Hosts**: The application uses local SQLite storage (`backend/referrals.db`). When deploying to ephemeral container platforms like Render (free tier) without an attached persistent disk, changes or new database records do not persist across container reboots or redeployments. To ensure persistence in production, attach a Render Persistent Disk and set `DATABASE_PATH` accordingly.
+- **Render Free-Tier SQLite Persistence Limitation**: The backend uses an embedded SQLite database (`backend/referrals.db`). On Render's free tier, the hosting environment operates on ephemeral containers without persistent storage. Any changes, additions, or modifications to the SQLite database will reset to the seeded defaults whenever Render spins down or restarts the container. For persistent storage in production, a Render Persistent Disk can be attached and mapped to `DATABASE_PATH`, or an external database service can be integrated.
 
 ---
 
